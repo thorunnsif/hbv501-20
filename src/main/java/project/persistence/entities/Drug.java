@@ -1,5 +1,7 @@
 package project.persistence.entities;
-/*
+
+import javax.persistence.*;
+
 @Entity
 @Table(name = "drug") // If you want to specify a table name, you can do so here
 public class Drug {
@@ -101,5 +103,3 @@ public class Drug {
     }
 }
 
-
-*/
