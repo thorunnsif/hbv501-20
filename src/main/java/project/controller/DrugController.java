@@ -36,15 +36,17 @@ public class DrugController {
         model.addAttribute("drug", new Drug());
         return "drugs/Drugs";
     }
-    @RequestMapping(value = "/drugs/{name}", method = RequestMethod.GET)
+    @RequestMapping(value = "/drugs/{type}", method = RequestMethod.GET)
     public String drugByType(String type, Model model) {
         return "";
     }
-
-    public String drugByProducer(String prod, Model model) {
-        return "";
-    }
-
+//  Er ekki viss um að þessi aðferð eigi við - erum ekki með producer í Drug klasa
+//  @RequestMapping(value = "/drugs/{producer}", method = RequestMethod.GET)
+//
+//    public String drugByProducer(String prod, Model model) {
+//        return "";
+//    }
+    @RequestMapping(value = "/drugs/{name}", method = RequestMethod.GET)
     public String drugByName(@PathVariable String name, Model model) {
         return "";
     }
