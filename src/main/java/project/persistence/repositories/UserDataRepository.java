@@ -1,0 +1,35 @@
+package project.persistence.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import project.persistence.entities.UserData;
+
+import java.util.List;
+
+/**
+ * Created by EiríkurAtli on 4.11.2016.
+ */
+
+public interface UserDataRepository extends JpaRepository<UserData, Long> {
+
+    UserData save(UserData userData);
+
+    void delete(UserData userData);
+
+    List<UserData> findAll();
+
+    // If we need a custom query that maybe doesn't fit the naming convention used by the JPA repository,
+    // then we can write it quite easily with the @Query notation, like you see below.
+    // This method returns all PostitNotes where the length of the name is equal or greater than 3 characters.
+    //@Query(value = "SELECT p FROM UserData p where length(p.name) >= 3 ")
+    //List<UserData> findAllWithNameLongerThan3Chars();
+
+    // Instead of the method findAllReverseOrder() in PostitNoteService.java,
+    // We could have used this method by adding the words
+    // ByOrderByIdDesc, which mean: Order By Id in a Descending order
+    //
+    List<UserData> findAllByOrderByIdDesc();
+
+    UserData findOne(Long id);
+
+    List<UserData> findByName(String username);
+}

@@ -1,6 +1,10 @@
 package project.persistence.entities;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "drug") // If you want to specify a table name, you can do so here
@@ -19,6 +23,8 @@ public class Drug {
     private boolean reminder;
     private int reminderTime;
 
+    public Drug() {
+    }
 
     public Drug(int dosage, int frequency, int date, String name, int activeIngr, boolean reminder, int reminderTime) {
         this.dosage = dosage;
@@ -102,4 +108,3 @@ public class Drug {
                 dosage,name);
     }
 }
-
