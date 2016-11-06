@@ -1,21 +1,15 @@
-package project.controller;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import project.persistence.entities.Drug;
-import project.service.DrugService;
+package project.controller;
 
 /**
  * Created by thorunn on 05/11/16.
  */
+ /*
 @Controller
-
 public class DrugController {
-    private DrugService drugService;
+    DrugService drugService;
 
+    @Autowired
     public DrugController(DrugService drugService) {
         this.drugService = drugService;
 
@@ -27,21 +21,22 @@ public class DrugController {
     }
 
     public String drugViewPost(Drug drug, Model model) {
-
+        return "";
     }
 
     public String drugByType(String type, Model model) {
-
+        return "";
     }
 
     public String drugByProducer(String prod, Model model) {
-
+        return "";
     }
 
     public String drugByName(String name, Model model) {
-
+        return "";
     }
 
 
 
 }
+*/

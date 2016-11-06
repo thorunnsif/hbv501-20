@@ -47,6 +47,6 @@ public interface UserDataService {
      * @param username {@link String}
      * @return All {@link UserData}s with the {@link String username} passed
      */
-    List<UserData> findByName(String username);
+    List<UserData> findByUsername(String username);
 
 }

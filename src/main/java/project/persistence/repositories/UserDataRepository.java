@@ -1,6 +1,7 @@
 package project.persistence.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import project.persistence.entities.UserData;
 
 import java.util.List;
@@ -20,8 +21,10 @@ public interface UserDataRepository extends JpaRepository<UserData, Long> {
     // If we need a custom query that maybe doesn't fit the naming convention used by the JPA repository,
     // then we can write it quite easily with the @Query notation, like you see below.
     // This method returns all PostitNotes where the length of the name is equal or greater than 3 characters.
-    //@Query(value = "SELECT p FROM UserData p where length(p.name) >= 3 ")
-    //List<UserData> findAllWithNameLongerThan3Chars();
+
+    @Query(value = "SELECT p FROM UserData p" )
+    //@Query(value = "SELECT p FROM UserData p where (p.username) is username" )
+    List<UserData> findByUsername(String username);
 
     // Instead of the method findAllReverseOrder() in PostitNoteService.java,
     // We could have used this method by adding the words
@@ -31,5 +34,5 @@ public interface UserDataRepository extends JpaRepository<UserData, Long> {
 
     UserData findOne(Long id);
 
-    List<UserData> findByName(String username);
+    //List<UserData> findByName(String username);
 }

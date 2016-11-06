@@ -30,7 +30,7 @@ public class UserDataController {
     // Method that returns the correct view for the URL /postit
     // This handles the GET request for this URL
     // Notice the `method = RequestMethod.GET` part
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    @RequestMapping(value = "/userData", method = RequestMethod.GET)
     public String userDataViewGet(Model model){
 
         // Add a new Postit Note to the model for the form
@@ -39,10 +39,10 @@ public class UserDataController {
         model.addAttribute("userData",new UserData());
 
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        model.addAttribute("userData2",userDataService.findAllReverseOrder());
+        model.addAttribute("userData",userDataService.findAllReverseOrder());
 
         // Return the view
-        return "userData2/UserData2";
+        return "UserData";
     }
 
     // Method that receives the POST request on the URL /postit
@@ -59,7 +59,7 @@ public class UserDataController {
         userDataService.save(userData);
 
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        model.addAttribute("userData2", userDataService.findAllReverseOrder());
+        model.addAttribute("userData", userDataService.findAllReverseOrder());
 
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
@@ -67,7 +67,7 @@ public class UserDataController {
         model.addAttribute("userData", new UserData());
 
         // Return the view
-        return "userData2/UserData2";
+        return "UserData";
     }
 
 
@@ -82,7 +82,7 @@ public class UserDataController {
                                              Model model){
 
         // Get all Postit Notes with this name and add them to the model
-        model.addAttribute("userDatas", userDataService.findByName(username));
+        model.addAttribute("userData", userDataService.findByUsername(username));
 
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
@@ -90,7 +90,7 @@ public class UserDataController {
         model.addAttribute("userData", new UserData());
 
         // Return the view
-        return "userDatas/UserDatas";
+        return "UserData";
     }
 
 }

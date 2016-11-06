@@ -6,16 +6,22 @@
 <html lang="en">
 
     <head>
-        <title>Project Title</title>
+        <title>Lyfjabox</title>
     </head>
     <body>
 
-    <h1>HBV501G Project Spring Boot Skeleton</h1>
-    <p>This skeleton of a Spring Boot Web project was made to help groups get started on their projects without to much hassle.</p>
+    <h1>Lyfjabox</h1>
+    <p>Here you can easily keep all your information on your medication history and usage in one place</p>
 
     <ul>
         <li><a href="/postit">Click here for Persistence Layer Demo</a></li>
     </ul>
+    <ul>
+        <li><a href="">Click here to sign in</a></li>
+    </ul>
+    <ul>
+        <li><a href="/userData">Click here to register</a></li>
+    </ul>
     </body>
-    <footer>Class HBV501G, University of Iceland, Fall 2015</footer>
+    <footer>Class HBV501G - Group 20, University of Iceland, Fall 2016</footer>
 </html>

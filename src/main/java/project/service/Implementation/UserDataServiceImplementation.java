@@ -58,7 +58,7 @@ public class UserDataServiceImplementation implements UserDataService {
 
 
     @Override
-    public List<UserData> findByName(String username) {return repository.findByName(username);
+    public List<UserData> findByUsername(String username) {return repository.findByUsername(username);
     }
 
 }

@@ -26,7 +26,8 @@ public class UserData {
     private String address;
     private String city;
     private int zip;
-    private int phoneNo;    private String email;
+    private int phoneNo;
+    private String email;
     private String username;
     private String password;
     private int accountType;
@@ -151,7 +152,7 @@ public class UserData {
     @Override
     public String toString() {
         return String.format(
-                "Postit Note[name=%s, note=%s]",
+                "User Data[firstname=%s, lastname=%s]",
                 firstName,lastName);
     }
 }
