@@ -24,6 +24,7 @@ public class Drug {
     private int reminderTime;
 
     public Drug() {
+        this.name = "";
     }
 
     public Drug(int dosage, int frequency, int date, String name, int activeIngr, boolean reminder, int reminderTime) {
