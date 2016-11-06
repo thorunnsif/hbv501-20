@@ -46,8 +46,9 @@ public interface DrugService {
      * @param type {@link String}
      * @return All {@link Drug}s with the {@link String type} passed
      */
+/*
     List<Drug> findByType(String type);
-
+*/
     /**
      * Find all {@link Drug}s with {@link String activeIngr}
      * @param activeIngr {@link String}

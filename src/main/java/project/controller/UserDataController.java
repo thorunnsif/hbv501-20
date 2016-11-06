@@ -27,9 +27,8 @@ public class UserDataController {
         this.userDataService = userDataService;
     }
 
-    // Method that returns the correct view for the URL /postit
+    // Method that returns the correct view for the URL /userData
     // This handles the GET request for this URL
-    // Notice the `method = RequestMethod.GET` part
     @RequestMapping(value = "/userData", method = RequestMethod.GET)
     public String userDataViewGet(Model model){
 

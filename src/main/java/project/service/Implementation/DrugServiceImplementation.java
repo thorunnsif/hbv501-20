@@ -51,11 +51,12 @@ public class DrugServiceImplementation implements DrugService{
         return repository.findByName(name);
     }
 
+/*
     @Override
     public List<Drug> findByType(String type) {
         return repository.findByType(type);
     }
-
+*/
     @Override
     public List<Drug> findByActiveIngr(String activeIngr) {
         return repository.findByActiveIngr(activeIngr);

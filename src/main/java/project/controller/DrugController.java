@@ -1,6 +1,5 @@
 package project.controller;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import project.persistence.entities.Drug;
 import project.service.DrugService;
-
-import static org.eclipse.jdt.internal.compiler.parser.Parser.name;
 
 /**
  * Created by thorunn on 05/11/16.
@@ -38,12 +35,13 @@ public class DrugController {
         model.addAttribute("drug", new Drug());
         return "drugs/Drugs";
     }
+/*
     @RequestMapping(value = "/drugs/{type}", method = RequestMethod.GET)
     public String drugByType(@PathVariable String type, Model model) {
         model.addAttribute("drugs", drugService.findByType(type));
         return "drugs/Drugs";
     }
-
+*/
     @RequestMapping(value = "/drugs/{activeIngr}", method = RequestMethod.GET)
     public String drugByActiveIngr(@PathVariable String activeIngr, Model model) {
         model.addAttribute("drugs", drugService.findByActiveIngr(activeIngr));

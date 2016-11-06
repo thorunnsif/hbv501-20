@@ -11,7 +11,7 @@ import java.util.List;
 public interface DrugRepository extends JpaRepository<Drug, Long> {
     List<Drug> findByName(String name);
 
-    List<Drug> findByType(String type);
+//    List<Drug> findByType(String type);
 
     List<Drug> findByActiveIngr(String activeIngr);
 
