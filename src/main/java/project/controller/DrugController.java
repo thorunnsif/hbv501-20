@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import project.persistence.entities.Drug;
 import project.service.DrugService;
 
+import static org.eclipse.jdt.internal.compiler.parser.Parser.name;
+
 /**
  * Created by thorunn on 05/11/16.
  */
@@ -37,18 +39,21 @@ public class DrugController {
         return "drugs/Drugs";
     }
     @RequestMapping(value = "/drugs/{type}", method = RequestMethod.GET)
-    public String drugByType(String type, Model model) {
-        return "";
+    public String drugByType(@PathVariable String type, Model model) {
+        model.addAttribute("drugs", drugService.findByType(type));
+        return "drugs/Drugs";
     }
-//  Er ekki viss um að þessi aðferð eigi við - erum ekki með producer í Drug klasa
-//  @RequestMapping(value = "/drugs/{producer}", method = RequestMethod.GET)
-//
-//    public String drugByProducer(String prod, Model model) {
-//        return "";
-//    }
+
+    @RequestMapping(value = "/drugs/{activeIngr}", method = RequestMethod.GET)
+    public String drugByActiveIngr(@PathVariable String activeIngr, Model model) {
+        model.addAttribute("drugs", drugService.findByActiveIngr(activeIngr));
+        return "drugs/Drugs";
+    }
+
     @RequestMapping(value = "/drugs/{name}", method = RequestMethod.GET)
     public String drugByName(@PathVariable String name, Model model) {
-        return "";
+            model.addAttribute("drugs", drugService.findByName(name));
+            return "drugs/Drugs";
     }
 
 
