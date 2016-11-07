@@ -20,7 +20,7 @@
         <li><a href="">Click here to sign in</a></li>
     </ul>
     <ul>
-        <li><a href="/userData">Click here to register</a></li>
+        <li><a href="/user_data">Click here to register</a></li>
     </ul>
     </body>
     <footer>Class HBV501G - Group 20, University of Iceland, Fall 2016</footer>

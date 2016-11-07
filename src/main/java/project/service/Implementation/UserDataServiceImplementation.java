@@ -43,12 +43,12 @@ public class UserDataServiceImplementation implements UserDataService {
     @Override
     public List<UserData> findAllReverseOrder() {
         // Get all the Postit notes
-        List<UserData> userDatas = repository.findAll();
+        List<UserData> userDataList = repository.findAll();
 
         // Reverse the list
-        Collections.reverse(userDatas);
+        Collections.reverse(userDataList);
 
-        return userDatas;
+        return userDataList;
     }
 
     @Override

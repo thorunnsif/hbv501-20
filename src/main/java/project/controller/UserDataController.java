@@ -29,7 +29,7 @@ public class UserDataController {
 
     // Method that returns the correct view for the URL /userData
     // This handles the GET request for this URL
-    @RequestMapping(value = "/userData", method = RequestMethod.GET)
+    @RequestMapping(value = "/user_data", method = RequestMethod.GET)
     public String userDataViewGet(Model model){
 
         // Add a new Postit Note to the model for the form
@@ -38,7 +38,7 @@ public class UserDataController {
         model.addAttribute("userData",new UserData());
 
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        model.addAttribute("userData",userDataService.findAllReverseOrder());
+        model.addAttribute("userDataList",userDataService.findAllReverseOrder());
 
         // Return the view
         return "UserData";
@@ -50,7 +50,7 @@ public class UserDataController {
     // we can save the postit note because we get the data that was entered
     // into the form.
     // Notice the `method = RequestMethod.POST` part
-    @RequestMapping(value = "/userData", method = RequestMethod.POST)
+    @RequestMapping(value = "/user_data", method = RequestMethod.POST)
     public String userDataViewPost(@ModelAttribute("userData") UserData userData,
                                      Model model){
 
@@ -58,7 +58,7 @@ public class UserDataController {
         userDataService.save(userData);
 
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        model.addAttribute("userData", userDataService.findAllReverseOrder());
+        model.addAttribute("userDataList", userDataService.findAllReverseOrder());
 
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
@@ -76,12 +76,12 @@ public class UserDataController {
     // based on the data that we have.
     // This method finds all Postit Notes posted by someone with the requested {name}
     // and returns a list with all those Postit Notes.
-    @RequestMapping(value = "/userData/{username}", method = RequestMethod.GET)
+    @RequestMapping(value = "/user_data/{username}", method = RequestMethod.GET)
     public String UserDataGetNotesFromUserName(@PathVariable String username,
                                              Model model){
 
         // Get all Postit Notes with this name and add them to the model
-        model.addAttribute("userData", userDataService.findByUsername(username));
+        model.addAttribute("userDataList", userDataService.findByUsername(username));
 
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
