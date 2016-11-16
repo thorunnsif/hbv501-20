@@ -31,13 +31,23 @@ public class UserData {
     private String username;
     private String password;
     private int accountType;
+
+    public int getLoginCounter() {
+        return loginCounter;
+    }
+
+    public void setLoginCounter(int loginCounter) {
+        this.loginCounter = loginCounter;
+    }
+
+    private int loginCounter;
 //    private List<Drug> userDrugs;
 
     public UserData() {
     }
 
     public UserData(String firstName, String lastName, int social, String address, String city, int zip, int phoneNo,
-                String email, String username, String password, int accountType) { // , List<Drug> userDrugs
+                String email, String username, String password, int accountType, int loginCounter) { // , List<Drug> userDrugs
         this.firstName = firstName;
         this.lastName = lastName;
         this.social = social;
@@ -49,6 +59,7 @@ public class UserData {
         this.username = username;
         this.password = password;
         this.accountType = accountType;
+        this.loginCounter = loginCounter;
 //        this.userDrugs = userDrugs;
     }
 

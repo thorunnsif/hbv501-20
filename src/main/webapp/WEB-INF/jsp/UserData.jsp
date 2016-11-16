@@ -13,12 +13,12 @@
     </head>
     <body>
 
-    <h1><a href="/user_data">User Registration</a></h1>
+    <h1>User Registration</h1>
 
     <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
     <%--that is added to the model that is passed to the view.--%>
     <%--See UserDataController, method UserDataViewGet(), and find where this attribute is added to the model.--%>
-    <sf:form method="POST" commandName="userData" action="/user_data">
+    <sf:form method="POST" commandName="userData" action="/register">
 
         <table>
             <tr>
@@ -87,15 +87,17 @@
                 <%--For each postit note, that is in the list that was passed in the model--%>
                 <%--generate a row in the table--%>
                 <%--Here we set `postit` as a singular item out of the list `postitNotes`--%>
-                <c:forEach var="user_data" items="${userDataList}">
+                <c:forEach var="register" items="${userDataList}">
                     <tr>
                         <%--We can reference attributes of the Entity by just entering the name we gave--%>
                         <%--it in the singular item var, and then just a dot followed by the attribute name--%>
 
                         <%--Create a link based on the name attribute value--%>
-                        <td><a href="/user_data/${user_data.username}">${user_data.username}</a></td>
-                        <%--The String in the note attribute--%>
+                        <td>${user_data.firstName}</td>
+                        <td>${user_data.lastName}</td>
+                        <td>${user_data.phoneNo}</td>
                         <td>${user_data.email}</td>
+                        <td><a href="/register/${user_data.username}">${user_data.username}</a></td>
                     </tr>
                 </c:forEach>
             </table>
@@ -108,4 +110,5 @@
     </c:choose>
 
     </body>
+    <footer>Class HBV501G - Group 20, University of Iceland, Fall 2016</footer>
 </html>

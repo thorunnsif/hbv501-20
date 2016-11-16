@@ -6,6 +6,7 @@ import project.persistence.entities.UserData;
 import project.persistence.repositories.UserDataRepository;
 import project.service.UserDataService;
 
+import java.sql.SQLException;
 import java.util.Collections;
 import java.util.List;
 
@@ -59,6 +60,13 @@ public class UserDataServiceImplementation implements UserDataService {
 
     @Override
     public List<UserData> findByUsername(String username) {return repository.findByUsername(username);
+    }
+
+    @Override
+    public int isValidUser(String username, String password) throws SQLException
+    {
+        //return repository.exists(username, password);
+        return repository.isValidUser(username, password);
     }
 
 }
