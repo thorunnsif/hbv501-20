@@ -49,7 +49,7 @@ public class DrugController {
     }
 
     @RequestMapping(value = "/drugs/{name}", method = RequestMethod.GET)
-    public String drugByName(@PathVariable String name, Model model) {
+        public String drugByName(@PathVariable String name, Model model) {
             model.addAttribute("drugs", drugService.findByName(name));
             return "drugs/Drugs";
     }
