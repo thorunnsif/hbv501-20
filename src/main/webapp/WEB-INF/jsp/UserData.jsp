@@ -69,11 +69,12 @@
             <tr>
                 <td>Password:</td>
                     <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="password" type="text" placeholder="Choose your password"/></td>
+                <td><sf:password path="password" type="text" placeholder="Choose your password"/></td>
             </tr>
         </table>
 
         <input type="submit" VALUE="Register"/>
+        <input type="reset" VALUE="Reset form"/>
 
     </sf:form>
 
