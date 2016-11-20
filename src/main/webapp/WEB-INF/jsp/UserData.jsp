@@ -24,22 +24,22 @@
             <tr>
                 <td> First Name:</td>
                     <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="firstName" type="text" placeholder="Enter first name"/></td>
+                <td><sf:input path="firstName" type="text" placeholder="Enter first name" required="true" autofocus="autofocus"/></td>
             </tr>
             <tr>
                 <td>Last name:</td>
                     <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="lastName" type="text" placeholder="Enter last name"/></td>
+                <td><sf:input path="lastName" type="text" placeholder="Enter last name" required="true"/></td>
             </tr>
             <tr>
                 <td>Email address:</td>
                     <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="email" type="text" placeholder="Enter your email address"/></td>
+                <td><sf:input path="email" type="email" placeholder="Enter your email address" required="true"/></td>
             </tr>
             <tr>
                 <td>Social security number:</td>
                     <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="social" type="number" placeholder="Enter your SSN"/></td>
+                <td><sf:input path="social" type="number" value="nul" placeholder="Enter your SSN" size="10" required="true"/></td>
             </tr>
             <tr>
                 <td>Address:</td>
@@ -49,27 +49,27 @@
             <tr>
                 <td>City:</td>
                     <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="city" type="text" placeholder="Enter your city"/></td>
+                <td><sf:input path="city" type="text" placeholder="Enter your city" value=""/></td>
             </tr>
             <tr>
                 <td>Zip number:</td>
                     <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="zip" type="number" placeholder="Enter your zip code"/></td>
+                <td><sf:input path="zip" type="number" value="nul" placeholder="Enter your zip code" /></td>
             </tr>
             <tr>
                 <td>Phone number:</td>
                     <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="phoneNo" type="number" placeholder="Enter your phone number"/></td>
+                <td><sf:input path="phoneNo" type="number" value="nul" placeholder="Enter your phone number" required="true"/></td>
             </tr>
             <tr>
                 <td>Username:</td>
                     <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="username" type="text" placeholder="Choose your username"/></td>
+                <td><sf:input path="username" type="text" placeholder="Choose your username" required="true"/></td>
             </tr>
             <tr>
                 <td>Password:</td>
                     <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="password" type="text" placeholder="Choose your password"/></td>
+                <td><sf:input path="password" type="password" placeholder="Choose your password" required="true"/></td>
             </tr>
         </table>
 
