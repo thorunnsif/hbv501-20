@@ -48,6 +48,7 @@ public class DrugServiceImplementation implements DrugService{
 
     @Override
     public List<Drug> findByName(String name) {
+        System.out.println(name);
         return repository.findByName(name);
     }
 

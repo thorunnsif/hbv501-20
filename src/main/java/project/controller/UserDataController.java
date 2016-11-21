@@ -121,9 +121,9 @@ public class UserDataController {
             {
                 System.out.println("User Login Successful");
                 model.addAttribute("loggedInUser", userData.getUsername());
-                model.addAttribute("drug", new Drug());
-                model.addAttribute("drugs", drugService.findByName(drug.getName()));
 
+                model.addAttribute("drugs", drugService.findByName(drug.getName()));
+                model.addAttribute("drug", new Drug());
                 // set user as logged in user
                 loggedInUser = userData;
 

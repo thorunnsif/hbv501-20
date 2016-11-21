@@ -105,7 +105,7 @@ public class Drug {
     @Override
     public String toString() {
         return String.format(
-                "Postit Note[name=%s, note=%s]",
+                "Drug[dosage=%s, name=%s]",
                 dosage,name);
     }
 }

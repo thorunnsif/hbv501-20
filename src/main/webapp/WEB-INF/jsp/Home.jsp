@@ -41,12 +41,12 @@
                 <%--If the model has an attribute with the name `postitNotes`--%>
                 <c:when test="${not empty drugs}">
                     <%--Create a table for the Postit Notes--%>
-                    <table class="searchResults">
+                    <table class="users">
 
                             <%--For each postit note, that is in the list that was passed in the model--%>
                             <%--generate a row in the table--%>
                             <%--Here we set `postit` as a singular item out of the list `postitNotes`--%>
-                        <c:forEach var="drugSearch" items="${drugs}">
+                        <c:forEach var="drug" items="${drugs}">
                             <tr>
                                     <%--We can reference attributes of the Entity by just entering the name we gave--%>
                                     <%--it in the singular item var, and then just a dot followed by the attribute name--%>
@@ -60,6 +60,7 @@
 
                 <%--If all tests are false, then do this--%>
                 <c:otherwise>
+                    <p>No drugs found</p>
                 </c:otherwise>
             </c:choose>
 

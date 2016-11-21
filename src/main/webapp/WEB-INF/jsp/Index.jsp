@@ -13,19 +13,19 @@
     <body>
 
     <h1>Lyfjabox</h1>
-    <div id="outerbox">
-        <p>Here you can easily keep all your information on your medication history and usage in one place</p>
+        <div id="outerbox">
+            <p>Here you can easily keep all your information on your medication history and usage in one place</p>
 
-        <ul>
-            <li><a href="/postit">Click here for Persistence Layer Demo</a></li>
-        </ul>
-        <ul>
-            <li><a href="/login">Click here to sign in</a></li>
-        </ul>
-        <ul>
-            <li><a href="/register">Click here to register</a></li>
-        </ul>
-    </div>
+            <ul>
+                <li><a href="/postit">Click here for Persistence Layer Demo</a></li>
+            </ul>
+            <ul>
+                <li><a href="/login">Click here to sign in</a></li>
+            </ul>
+            <ul>
+                <li><a href="/register">Click here to register</a></li>
+            </ul>
+        </div>
     </body>
     <footer>Class HBV501G - Group 20, University of Iceland, Fall 2016</footer>
 </html>
