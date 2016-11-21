@@ -13,7 +13,7 @@
     <body>
 
     <h1>Lyfjabox</h1>
-    <p>You have successfully registered as a user for the Lyfjabox</p>
+    <p>You have successfully registered as a user for the Lyfjabox, you can now log in using your credentials.</p>
     <form action="/login">
         <%-- Add login path when finished --%>
         <input type="submit" value="Go to login" />

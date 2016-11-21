@@ -10,13 +10,13 @@
         <title>Lyfjabox</title>
 
         <link rel="stylesheet" type="text/css" href="<spring:url value="css/lyfjabox.css"/>"/>
-
-        <p style="font-size: x-large; color: red">You are now logged in as ${loggedInUser}</p>
     </head>
 
     <body>
-        <div id="outerbox">
+        <h2 id="outerbox">
+            <h4>Lyfjabox</h4>
             <h1>Lyfjabox - My account</h1>
+            <h2><p>You are now logged in as ${loggedInUser}</p></h2>
             <button type="submit" value="Log out">Log out</button>
             <p>Here you can easily keep all your information on your medication history and usage in one place</p>
 

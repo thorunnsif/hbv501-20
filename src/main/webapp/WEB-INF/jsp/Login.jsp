@@ -13,7 +13,7 @@
     </head>
     <body>
 
-    <h1>Login</h1>
+    <h3>Login</h3>
 
     <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
     <%--that is added to the model that is passed to the view.--%>
