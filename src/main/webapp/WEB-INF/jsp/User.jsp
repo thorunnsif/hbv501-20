@@ -7,6 +7,8 @@
 
     <head>
         <title>User Page</title>
+
+        <link rel="stylesheet" type="text/css" href="<spring:url value="css/lyfjabox.css"/>"/>
     </head>
     <body>
 

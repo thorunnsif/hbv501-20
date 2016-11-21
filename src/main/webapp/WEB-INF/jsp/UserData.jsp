@@ -9,7 +9,7 @@
     <head>
         <title>User registration page</title>
 
-        <%--<link rel="stylesheet" type="text/css" href="<c:url value="../../../resources/static/css/postitnote.css"/>"/>--%>
+        <link rel="stylesheet" type="text/css" href="<spring:url value="css/lyfjabox.css"/>"/>
     </head>
     <body>
 

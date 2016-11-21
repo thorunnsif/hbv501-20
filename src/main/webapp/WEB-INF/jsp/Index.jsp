@@ -8,7 +8,7 @@
     <head>
         <title>Lyfjabox</title>
 
-        <link rel="stylesheet" type="text/css" href="<spring:url value="../../../resources/lyfjabox.css"/>"/>
+        <link rel="stylesheet" type="text/css" href="<spring:url value="css/lyfjabox.css"/>"/>
     </head>
     <body>
 

@@ -8,22 +8,32 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import project.persistence.entities.Drug;
 import project.persistence.entities.UserData;
+import project.service.DrugService;
 import project.service.UserDataService;
 
 /**
  * Created by EiríkurAtli on 4.11.2016.
+ * Controller for UserData, Login and more
  */
 @Controller
 public class UserDataController {
 
     // Instance Variables
-    UserDataService userDataService;
+    private UserDataService userDataService;
+    private DrugService drugService;
+    private UserData loggedInUser;
+    private boolean loggedIn;
+
 
     // Dependency Injection
     @Autowired
-    public UserDataController(UserDataService userDataService) {
+    public UserDataController(UserDataService userDataService, DrugService drugService) {
         this.userDataService = userDataService;
+        this.drugService = drugService;
+        loggedIn = false;
+        loggedInUser = null;
     }
 
     // Method that returns the correct view for the URL /user_data
@@ -78,33 +88,44 @@ public class UserDataController {
     }
 
     @RequestMapping(value="/login",method = RequestMethod.GET)
-    //public ModelAndView displayLogin(HttpServletRequest request, HttpServletResponse response, UserData userData)
     public String displayLogin(Model model)
     {
-        //ModelAndView model = new ModelAndView("login");
+
         //LoginBean loginBean = new LoginBean();
         //model.addObject("loginBean", userData);
         //return model;
-        model.addAttribute("userData", new UserData());
+        if (loggedIn) {
+            model.addAttribute("drug", new Drug());
+            return "Home";
+        }
+        else {
+            model.addAttribute("loginData", new UserData());
+            model.addAttribute("drug", new Drug());
+            return "Login";
+        }
 
         // Return the view
-        return "Login";
+        //return "Login";
 
     }
     @RequestMapping(value="/login",method = RequestMethod.POST)
-
-    //public ModelAndView executeLogin(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("loginBean")LoginBean loginBean)
-    public String executeLogin(@ModelAttribute("userData") UserData userData, Model model){
+    public String executeLogin(@ModelAttribute("loginData") UserData userData, @ModelAttribute("drug") Drug drug, Model model)
     {
         try
         {
             int isValidUser = userDataService.isValidUser(userData.getUsername(), userData.getPassword());
-
-            if(isValidUser > 0)
+            if (isValidUser > 0) {
+                loggedIn = true;
+            }
+            if(loggedIn)
             {
                 System.out.println("User Login Successful");
                 model.addAttribute("loggedInUser", userData.getUsername());
-                //model = new Model("welcome");
+                model.addAttribute("drug", new Drug());
+                model.addAttribute("drugs", drugService.findByName(drug.getName()));
+
+                // set user as logged in user
+                loggedInUser = userData;
 
                 // reset login Counter
                 return "Home";
@@ -112,7 +133,7 @@ public class UserDataController {
             else
             {
                 //model = new ModelAndView("login");
-                System.out.println("Login Screwup!!!!");
+                System.out.println("Login Screw-up!!!!");
                 model.addAttribute("message", "Username and/or password do not match!!");
                 // Counter ++
             }
@@ -121,9 +142,21 @@ public class UserDataController {
         {
             e.printStackTrace();
         }
+        return "Login";
+    }
+/*
+    @RequestMapping(value="/login",method = RequestMethod.GET)
+    public String executeLogout(Model model) //@ModelAttribute("userData") Model model)
+    {
+        loggedInUser = null;
+        loggedIn = false;
+        System.out.println("Elvis Has Left The Building");
+
+        model.addAttribute("userData", new UserData());
 
         return "Login";
     }
+*/
 }
 
-}
+

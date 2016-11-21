@@ -1,18 +1,17 @@
 package project.persistence.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 //import java.util.List;
 
 /**
  * Created by EiríkurAtli on 3.11.2016.
+ *
  */
 
 @Entity
-@Table(name = "userdata") // If you want to specify a table name, you can do so here
+@Table(name = "userdata",
+        uniqueConstraints={@UniqueConstraint(columnNames={"username"})}
+) // If you want to specify a table name, you can do so here
 public class UserData {
 
     // Declare that this attribute is the id
@@ -31,15 +30,6 @@ public class UserData {
     private String username;
     private String password;
     private int accountType;
-
-    public int getLoginCounter() {
-        return loginCounter;
-    }
-
-    public void setLoginCounter(int loginCounter) {
-        this.loginCounter = loginCounter;
-    }
-
     private int loginCounter;
 //    private List<Drug> userDrugs;
 
@@ -47,7 +37,7 @@ public class UserData {
     }
 
     public UserData(String firstName, String lastName, int social, String address, String city, int zip, int phoneNo,
-                String email, String username, String password, int accountType, int loginCounter) { // , List<Drug> userDrugs
+                    String email, String username, String password, int accountType, int loginCounter) { // List<Drug> userDrugs,
         this.firstName = firstName;
         this.lastName = lastName;
         this.social = social;
@@ -158,7 +148,17 @@ public class UserData {
     public void setUserDrugs(List<Drug> userDrugs) {
         this.userDrugs = userDrugs;
     }
+
 */
+    public int getLoginCounter() {
+        return loginCounter;
+    }
+
+    public void setLoginCounter(int loginCounter) {
+        this.loginCounter = loginCounter;
+    }
+
+
 
     @Override
     public String toString() {

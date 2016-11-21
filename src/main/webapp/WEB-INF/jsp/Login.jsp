@@ -9,7 +9,7 @@
     <head>
         <title>Lyfjabox - Login</title>
 
-        <%--<link rel="stylesheet" type="text/css" href="<c:url value="../../../resources/static/css/postitnote.css"/>"/>--%>
+        <link rel="stylesheet" type="text/css" href="<spring:url value="css/lyfjabox.css"/>"/>
     </head>
     <body>
 
@@ -21,14 +21,14 @@
     <body>
     <p style= "font-size: large; color: red">${message}</p>
 
-    <sf:form method="POST" commandName="userData" action="/login">
+    <sf:form method="POST" commandName="loginData" action="/login">
 
         <sf:label path="username">Enter your username</sf:label>
         <sf:input id="username" name="username" path="" /><br>
         <sf:label path="username">Please enter your password</sf:label>
         <sf:password id="password" name="password" path="" /><br>
 
-        <input type="submit" value="Login" />
+        <input type="submit" value="Login" href="Home.jsp"/>
 
     </sf:form>
 

@@ -2,11 +2,6 @@ package project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import project.persistence.entities.Drug;
 import project.service.DrugService;
 
 /**
@@ -22,18 +17,19 @@ public class DrugController {
         this.drugService = drugService;
     }
 
-    @RequestMapping(value = "/drugs", method = RequestMethod.GET)
-    public String drugViewGet(Model model) {
-        model.addAttribute("drugs", drugService.findAllReverseOrder());
-        return "drugs/Drugs";
+    /*@RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String drugSearchGet(Model model) {
+        model.addAttribute("drug", new Drug());
+        //model.addAttribute("drugs", drugService.findAllReverseOrder());
+        return "Home";
     }
 
-    @RequestMapping(value = "/drugs", method = RequestMethod.POST)
-    public String drugViewPost(Drug drug, Model model) {
-        drugService.save(drug);
-        model.addAttribute("drugs", drugService.findAllReverseOrder());
+    @RequestMapping(value = "/home", method = RequestMethod.POST)
+    public String drugSearchPost(@ModelAttribute("drug") Drug drug, Model model) {
         model.addAttribute("drug", new Drug());
-        return "drugs/Drugs";
+        model.addAttribute("drugs", drugService.findByName(drug.getName()));
+
+        return "Home";
     }
 /*
     @RequestMapping(value = "/drugs/{type}", method = RequestMethod.GET)
@@ -41,7 +37,7 @@ public class DrugController {
         model.addAttribute("drugs", drugService.findByType(type));
         return "drugs/Drugs";
     }
-*/
+
     @RequestMapping(value = "/drugs/{activeIngr}", method = RequestMethod.GET)
     public String drugByActiveIngr(@PathVariable String activeIngr, Model model) {
         model.addAttribute("drugs", drugService.findByActiveIngr(activeIngr));
@@ -53,7 +49,7 @@ public class DrugController {
             model.addAttribute("drugs", drugService.findByName(name));
             return "drugs/Drugs";
     }
-
+*/
 
 
 }
