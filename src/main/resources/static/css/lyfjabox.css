@@ -1,13 +1,14 @@
 
 body {
-    color: gainsboro;
+    background-color: gainsboro;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
 #outerbox {
     background-color: white;
-    width: 70%;
-    border-color: black ;
+    width: auto;
+    border-color: black;
 }
 
 h4 {

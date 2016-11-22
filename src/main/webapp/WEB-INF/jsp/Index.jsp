@@ -11,8 +11,7 @@
         <link rel="stylesheet" type="text/css" href="<spring:url value="css/lyfjabox.css"/>"/>
     </head>
     <body>
-
-    <h1>Lyfjabox</h1>
+    <h4>Lyfjabox</h4>
         <div id="outerbox">
             <p>Here you can easily keep all your information on your medication history and usage in one place</p>
 
