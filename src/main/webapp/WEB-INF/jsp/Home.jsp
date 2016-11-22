@@ -13,17 +13,16 @@
     </head>
 
     <body>
-        <h2 id="outerbox">
+        <div id="outerbox" >
+            <a href="#" class="myButton1" style="float: right">Log out</a>
             <h4>Lyfjabox</h4>
             <h1>Lyfjabox - My account</h1>
             <h2><p>You are now logged in as ${loggedInUser}</p></h2>
-            <button type="submit" value="Log out">Log out</button>
             <p>Here you can easily keep all your information on your medication history and usage in one place</p>
 
 
 
             <sf:form method="POST" commandName="drug" action="/login">
-
                 <table>
                     <tr>
                         <td> Search for drug:</td>
@@ -32,7 +31,7 @@
                     </tr>
                 </table>
 
-                <input type="submit" VALUE="Search"/>
+                <input class="myButton2" type="submit" VALUE="Search"/>
 
             </sf:form>
 
@@ -63,6 +62,8 @@
                     <p>No drugs found</p>
                 </c:otherwise>
             </c:choose>
+
+            <h3>You are currently taking:</h3>
 
 
         </div>

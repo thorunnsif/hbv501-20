@@ -28,7 +28,9 @@
                 <sf:label path="username">Please enter your password</sf:label>
                 <sf:password id="password" name="password" path="" /><br>
 
-                <input type="submit" value="Login" href="Home.jsp"/>
+                <input class="loginbutton" type="submit" value="Login" href="Home.jsp"/>
+
+                <a href="Index.jsp" class="cancelbutton">Cancel</a>
 
             </sf:form>
         </div>

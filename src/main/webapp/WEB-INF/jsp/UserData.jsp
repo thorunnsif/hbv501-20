@@ -13,6 +13,7 @@
     </head>
     <body>
         <div id="outerbox">
+            <h4>Lyfjabox</h4>
             <h1>User Registration</h1>
 
             <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>

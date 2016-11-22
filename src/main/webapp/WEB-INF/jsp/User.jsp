@@ -12,6 +12,7 @@
     </head>
     <body>
         <div id="outerbox">
+            <h4>Lyfjabox</h4>
             <h1>User Page</h1>
             <p>Here could be some user information</p>
 

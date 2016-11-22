@@ -12,7 +12,7 @@
     </head>
     <body>
         <div id="outerbox">
-            <h1>Lyfjabox</h1>
+            <h4>Lyfjabox</h4>
             <p>You have successfully registered as a user for the Lyfjabox</p>
             <form action="/login">
                 <%-- Add login path when finished --%>
