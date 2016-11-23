@@ -27,7 +27,7 @@
                     <tr>
                         <td> Search for drug:</td>
                             <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                        <td><sf:input path="name" type="text" placeholder="Search for..."/></td>
+                        <td><sf:input path="name" type="text" placeholder="Search for..." autofocus="autofocus"/></td>
                     </tr>
                 </table>
 

@@ -24,7 +24,7 @@
             <div class="login">
             <sf:form method="POST" commandName="loginData" action="/login">
                 <h3>Here you can log in using your credentials</h3>
-                <sf:input id="username" name="username" path="" placeholder="Username" /><br>
+                <sf:input id="username" name="username" path="" placeholder="Username" autofocus="autofocus"/><br>
                 <sf:password id="password" name="password" path="" placeholder="Password"/><br>
                 <p class="remember_me">
                     <label>
