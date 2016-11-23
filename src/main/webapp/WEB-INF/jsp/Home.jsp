@@ -17,7 +17,7 @@
             <a href="#" class="myButton1" style="float: right">Log out</a>
             <h4>Lyfjabox</h4>
             <h1>Lyfjabox - My account</h1>
-            <h2><p>You are now logged in as ${loggedInUser}</p></h2>
+            <h3><p>You are now logged in as ${loggedInUser}</p></h3>
             <p>Here you can easily keep all your information on your medication history and usage in one place</p>
 
 
@@ -59,7 +59,7 @@
 
                 <%--If all tests are false, then do this--%>
                 <c:otherwise>
-                    <p>No drugs found</p>
+                    <%--<p>No drugs found</p>--%>
                 </c:otherwise>
             </c:choose>
 

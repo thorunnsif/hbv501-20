@@ -13,6 +13,7 @@
     </head>
     <body>
         <div id="outerbox">
+            <h4>Lyfjabox</h4>
             <h1>Login</h1>
 
             <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
@@ -20,19 +21,23 @@
             <%--See UserDataController, method UserDataViewGet(), and find where this attribute is added to the model.--%>
 
             <p style= "font-size: large; color: red">${message}</p>
-
+            <div class="login">
             <sf:form method="POST" commandName="loginData" action="/login">
-
-                <sf:label path="username">Enter your username</sf:label>
-                <sf:input id="username" name="username" path="" /><br>
-                <sf:label path="username">Please enter your password</sf:label>
-                <sf:password id="password" name="password" path="" /><br>
-
+                <h3>Here you can log in using your credentials</h3>
+                <sf:input id="username" name="username" path="" placeholder="Username" /><br>
+                <sf:password id="password" name="password" path="" placeholder="Password"/><br>
+                <p class="remember_me">
+                    <label>
+                        <input type="checkbox" name="remember_me" id="remember_me">
+                        Remember me on this computer
+                    </label>
+                </p>
                 <input class="loginbutton" type="submit" value="Login" href="Home.jsp"/>
 
                 <a href="Index.jsp" class="cancelbutton">Cancel</a>
 
             </sf:form>
+                </div>
         </div>
     </body>
 

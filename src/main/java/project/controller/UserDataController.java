@@ -146,7 +146,7 @@ public class UserDataController {
     }
 /*
     @RequestMapping(value="/login",method = RequestMethod.GET)
-    public String executeLogout(Model model) //@ModelAttribute("userData") Model model)
+    public String executeLogout(Model model) @ModelAttribute("userData") Model model)
     {
         loggedInUser = null;
         loggedIn = false;
@@ -156,7 +156,7 @@ public class UserDataController {
 
         return "Login";
     }
-*/
+    */
 }
 
 

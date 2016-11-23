@@ -11,13 +11,9 @@
         <link rel="stylesheet" type="text/css" href="<spring:url value="css/lyfjabox.css"/>"/>
     </head>
     <body>
+    <div id="outerbox">
     <h4>Lyfjabox</h4>
-        <div id="outerbox">
             <p>Here you can easily keep all your information on your medication history and usage in one place</p>
-
-            <ul>
-                <li><a href="/postit">Click here for Persistence Layer Demo</a></li>
-            </ul>
             <ul>
                 <li><a href="/login">Click here to sign in</a></li>
             </ul>
