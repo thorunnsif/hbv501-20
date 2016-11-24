@@ -31,13 +31,13 @@ public class UserData {
     private String password;
     private int accountType;
     private int loginCounter;
-//    private List<Drug> userDrugs;
+    private String[] userDrugs;
 
     public UserData() {
     }
 
     public UserData(String firstName, String lastName, int social, String address, String city, int zip, int phoneNo,
-                    String email, String username, String password, int accountType, int loginCounter) { // List<Drug> userDrugs,
+                    String email, String username, String password, int accountType, int loginCounter, String[] userDrugs) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.social = social;
@@ -50,7 +50,7 @@ public class UserData {
         this.password = password;
         this.accountType = accountType;
         this.loginCounter = loginCounter;
-//        this.userDrugs = userDrugs;
+        this.userDrugs = userDrugs;
     }
 
     public String getFirstName() {
@@ -141,15 +141,25 @@ public class UserData {
         this.accountType = accountType;
     }
 
-/*    public List<Drug> getUserDrugs() {
+    public String[] getUserDrugs() { return userDrugs; }
+
+    public void setUserDrugs(String[] userDrugs) { this.userDrugs = userDrugs; }
+
+    public int getLoginCounter() { return loginCounter; }
+
+    public void setLoginCounter(int loginCounter) { this.loginCounter = loginCounter; }
+
+/*
+    @OneToMany(mappedBy = "userDrug", cascade = CascadeType.ALL)
+    public Set<UserDrug> getUserDrugs() {
         return userDrugs;
     }
 
-    public void setUserDrugs(List<Drug> userDrugs) {
+    public void setUserDrugs(Set<UserDrug> userDrugs) {
         this.userDrugs = userDrugs;
     }
 
-*/
+
     public int getLoginCounter() {
         return loginCounter;
     }
@@ -157,7 +167,7 @@ public class UserData {
     public void setLoginCounter(int loginCounter) {
         this.loginCounter = loginCounter;
     }
-
+*/
 
 
     @Override

@@ -95,6 +95,7 @@ public class UserDataController {
         //model.addObject("loginBean", userData);
         //return model;
         if (loggedIn) {
+            model.addAttribute("loggedInUser", loggedInUser);
             model.addAttribute("drug", new Drug());
             return "Home";
         }
@@ -103,11 +104,10 @@ public class UserDataController {
             model.addAttribute("drug", new Drug());
             return "Login";
         }
-
         // Return the view
         //return "Login";
-
     }
+
     @RequestMapping(value="/login",method = RequestMethod.POST)
     public String executeLogin(@ModelAttribute("loginData") UserData userData, @ModelAttribute("drug") Drug drug, Model model)
     {
@@ -119,13 +119,15 @@ public class UserDataController {
             }
             if(loggedIn)
             {
-                System.out.println("User Login Successful");
-                model.addAttribute("loggedInUser", userData.getUsername());
+                loggedInUser = userData;
 
+                System.out.println("User Login Successful");
+                model.addAttribute("loggedInUser", loggedInUser);
                 model.addAttribute("drugs", drugService.findByName(drug.getName()));
                 model.addAttribute("drug", new Drug());
+                //model.addAttribute("userDrugs", );
                 // set user as logged in user
-                loggedInUser = userData;
+
 
                 // reset login Counter
                 return "Home";
@@ -146,7 +148,7 @@ public class UserDataController {
     }
 /*
     @RequestMapping(value="/login",method = RequestMethod.GET)
-    public String executeLogout(Model model) @ModelAttribute("userData") Model model)
+    public String executeLogout(Model model) //@ModelAttribute("userData") Model model)
     {
         loggedInUser = null;
         loggedIn = false;
@@ -156,7 +158,21 @@ public class UserDataController {
 
         return "Login";
     }
-    */
+*/
+
+     private String[] convertToArray (String userDrugs) {
+        return userDrugs.split("#");
+    }
+
+    private String convertToString (String[] userDrugs) {
+        String result = "";
+        for(int i = 1; i < userDrugs.length-1; i++) {
+            result = result + userDrugs[i] + "#";
+        }
+        result = result + userDrugs[userDrugs.length-1];
+        return result;
+    }
+
 }
 
 

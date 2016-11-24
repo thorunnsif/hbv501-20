@@ -194,16 +194,29 @@ footer {
 
 
 
-/*
-table {
+
+table#currentDrugs, #searchResults {
     border: 1px black solid;
+    table-layout: fixed;
+    width: 70%;
 }
 
-td {
+td#currentDrugs, #searchResults {
     padding: 15px;
     text-align: left;
 }
 
+th#currentDrugs, #searchResults {
+    padding: 15px;
+    text-align: center;
+}
+
+#tablebuttons {
+    text-align: center
+}
+
+
+/*
 table tr:nth-child(even) {
     background-color: antiquewhite;
 }
