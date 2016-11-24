@@ -22,11 +22,6 @@ public interface UserDataRepository extends JpaRepository<UserData, Long> {
 
     List<UserData> findByUsername(String username);
 
-    // Instead of the method findAllReverseOrder() in PostitNoteService.java,
-    // We could have used this method by adding the words
-    // ByOrderByIdDesc, which mean: Order By Id in a Descending order
-    List<UserData> findAllByOrderByIdDesc();
-
     UserData findOne(Long id);
 
     //boolean exists(String username, String password);
