@@ -53,9 +53,7 @@ public class UserDataServiceImplementation implements UserDataService {
     }
 
     @Override
-    public UserData findOne(Long id) {
-        return repository.findOne(id);
-    }
+    public UserData findOne(String email) { return repository.findOne(email); }
 
 
     @Override

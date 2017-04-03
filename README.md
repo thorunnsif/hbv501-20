@@ -10,7 +10,7 @@ When all the dependencies are downloaded, you can run the project by running the
 
 ### Database
 Database is online and is automatically connected to application when it is running.
-Drug table in database currently has the following drugs do search for:
+Drug table in database currently has the following drugs to search for:
 "Panodil"
 "Parkodin"
 "Benylan"

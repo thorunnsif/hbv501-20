@@ -37,11 +37,11 @@ public interface UserDataService {
     List<UserData> findAllReverseOrder();
 
     /**
-     * Find a {@link UserData} based on {@link Long id}
-     * @param id {@link Long}
-     * @return A {@link UserData} with {@link Long id}
+     * Find a {@link UserData} based on {@link String email}
+     * @param email {@link String}
+     * @return A {@link UserData}
      */
-    UserData findOne(Long id);
+    UserData findOne(String email);
 
     /**
      * Find all {@link UserData}s with {@link String username}
@@ -49,6 +49,8 @@ public interface UserDataService {
      * @return All {@link UserData}s with the {@link String username} passed
      */
     List<UserData> findByUsername(String username);
+
+
 
     /**
      * Check if {@link String username} and {@link String password} exist and fit
