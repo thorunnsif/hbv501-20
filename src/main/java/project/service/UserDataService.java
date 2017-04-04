@@ -50,7 +50,12 @@ public interface UserDataService {
      */
     List<UserData> findByUsername(String username);
 
-
+    /**
+     * Find {@link UserData} with {@link String email}
+     * @param email {@link String}
+     * @return A {@link UserData}s with the {@link String email} passed
+     */
+    UserData findByEmail(String email);
 
     /**
      * Check if {@link String username} and {@link String password} exist and fit

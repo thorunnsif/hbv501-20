@@ -5,6 +5,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,6 +16,7 @@ import project.service.UserDataService;
 /**
  * Created by EiríkurAtli on 3.4.2017.
  */
+@Controller
 public class MobileUserDataController {
 
     // Instance Variables
@@ -56,16 +58,17 @@ public class MobileUserDataController {
 */
     @RequestMapping(value="/m/login",method = RequestMethod.POST)
     public ResponseEntity<String> login(@RequestBody String jsonString) throws JSONException {
+        System.out.println(jsonString);
         JSONObject jsonObject = new JSONObject(jsonString);
-        String loginUsername = jsonObject.getString("email");
+        String loginEmail = jsonObject.getString("email");
         String loginPassword = jsonObject.getString("password");
         //String encodedLoginPassword = passwordEncoder.encode(loginPassword);
 
-        if(userDataService.findOne(loginUsername)==null){
+        if(userDataService.findByEmail(loginEmail)==null){
             return new ResponseEntity<String>("No user with that email", HttpStatus.OK);
         }
 
-        UserData user = userDataService.findOne(loginUsername);
+        UserData user = userDataService.findByEmail(loginEmail);
         String userPassword = user.getPassword();
 
         if(loginPassword.compareTo(userPassword) <= 0) {

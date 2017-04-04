@@ -55,6 +55,9 @@ public class UserDataServiceImplementation implements UserDataService {
     @Override
     public UserData findOne(String email) { return repository.findOne(email); }
 
+    @Override
+    public UserData findByEmail(String email) {return repository.findByEmail(email); }
+
 
     @Override
     public List<UserData> findByUsername(String username) {return repository.findByUsername(username);

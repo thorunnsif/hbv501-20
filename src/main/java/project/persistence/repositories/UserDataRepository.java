@@ -22,8 +22,10 @@ public interface UserDataRepository extends JpaRepository<UserData, Long> {
 
     List<UserData> findByUsername(String username);
 
+    UserData findByEmail(String email);
+
     @Query(value = "SELECT p FROM UserData p WHERE p.email = :email")
-    UserData findOne(String email);
+    UserData findOne(@Param("email") String email);
 
     //boolean exists(String username, String password);
 
